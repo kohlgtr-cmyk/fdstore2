@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FD Store | Fort Dynamic - Vista-se com Autoridade</title>
+    <link rel="stylesheet" href="/css/style-old.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">👋</span>
+                    <div class="logo-text">
+                        <strong>FD STORE</strong>
+                        <small>Fort Dynamic</small>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#inicio">Início</a>
+                    <a href="#produtos">Produtos</a>
+                    <a href="#colecoes">Coleções</a>
+                    <a href="#personalizar">Personalizar</a>
+                    <a href="#tecnologia">Tecnologia</a>
+                </nav>
+                <div class="header-icons">
+                    <button class="icon-btn" id="favoritesBtn">
+                        ❤️
+                    </button>
+                    <button class="icon-btn" id="cartBtn">
+                        🛒
+                        <span class="badge" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="hero-badge">INOVAÇÃO • TECNOLOGIA • PREMIUM</div>
+            <h1 class="hero-title">
+                Vista-se com<br>
+                <span class="highlight">Autoridade</span>
+            </h1>
+            <p class="hero-subtitle">
+                Ecossistema Digital Completo para Moda Personalizada
+            </p>
+            <p class="hero-description">
+                Um sistema revolucionário que une aplicativo, e-commerce e inteligência artificial em uma plataforma única.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="openPersonalizer()">
+                    ✨ Criar Agora
+                </button>
+                <button class="btn btn-secondary">
+                    📱 Conheça a Marca
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-card card-1">
+                <span class="card-icon">👕</span>
+                <span>Camisetas</span>
+            </div>
+            <div class="floating-card card-2">
+                <span class="card-icon">🧥</span>
+                <span>Moletons</span>
+            </div>
+            <div class="floating-card card-3">
+                <span class="card-icon">👔</span>
+                <span>Uniformes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Cinco Bancos <span class="highlight">Inteligentes</span></h2>
+            <p class="section-subtitle">
+                A arquitetura do ecossistema FD Store se sustenta em cinco repositórios de dados interconectados
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Personagens IA</h3>
+                    <p>Biblioteca de personagens gerados por IA com características únicas, estilos visuais e técnicas completas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👗</div>
+                    <h3>Banco de Moda</h3>
+                    <p>Modelos de peças com especificações completas: cores, tamanhos, tecidos e prévia 3D.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Banco de Estampas</h3>
+                    <p>Estampas prontas e gerador IA para novas criações. Estilos variados: street, minimalista, esportivo e premium.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dados Inteligentes</h3>
+                    <p>Recomendações personalizadas baseadas em histórico, produtos populares e comportamento.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Gerador de Coleções</h3>
+                    <p>Combinação automática: personagem + estampa + peça + cor + tamanho. Criação de coleções temáticas inteligentes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="produtos">
+        <div class="container">
+            <h2 class="section-title">Produtos em <span class="highlight">Destaque</span></h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- App Showcase -->
+    <section class="app-showcase">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-text">
+                    <div class="badge-sm">APLICATIVO FD STORE</div>
+                    <h2>Experiência Mobile <span class="highlight">Premium</span></h2>
+                    <p>O aplicativo FD Store oferece funcionalidades completas de e-commerce integradas com ferramentas de criação avançadas.</p>
+                    <ul class="app-features">
+                        <li>
+                            <span class="check">✓</span>
+                            Catálogo dinâmico com filtros inteligentes
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            Criador de estampas com IA generativa
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            Gerador de personagens exclusivos
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            Prévia 3D realista das peças
+                        </li>
+                        <li>
+                            <span class="check">✓</span>
+                            Área do cliente completa
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary">📱 Baixar App</button>
+                </div>
+                <div class="app-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="app-interface">
+                                <div class="app-header-mini">
+                                    <span>FD Store</span>
+                                    <span>🛒</span>
+                                </div>
+                                <div class="app-hero-mini">
+                                    <h3>Vista-se com Autoridade</h3>
+                                </div>
+                                <div class="app-products-mini">
+                                    <div class="mini-product">👕</div>
+                                    <div class="mini-product">🧥</div>
+                                    <div class="mini-product">👔</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalizer Section -->
+    <section class="personalizer" id="personalizar">
+        <div class="container">
+            <h2 class="section-title">Personalização <span class="highlight">Avançada</span></h2>
+            <p class="section-subtitle">Ferramenta completa para customização com IA generativa</p>
+            
+            <div class="personalizer-demo">
+                <div class="personalizer-controls">
+                    <div class="control-group">
+                        <label>Escolha o Produto</label>
+                        <select title="ProductType" id="productType" class="custom-select">
+                            <option value="tshirt">Camiseta</option>
+                            <option value="hoodie">Moletom</option>
+                            <option value="uniform">Uniforme</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>Cor Base</label>
+                        <div class="color-picker">
+                            <button title="color1" class="color-btn1"></button>
+                            <button title="color2" class="color-btn2"></button>
+                            <button title="color3" class="color-btn3"></button>
+                            <button title="color4" class="color-btn4"></button>
+                            <button title="color5" class="color-btn5"></button>
+                            <button title="color6" class="color-btn6"></button>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>Tamanho</label>
+                        <div class="size-picker">
+                            <button class="size-btn">P</button>
+                            <button class="size-btn">M</button>
+                            <button class="size-btn active">G</button>
+                            <button class="size-btn">GG</button>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>Estampa IA</label>
+                        <input type="text" class="custom-input" placeholder="Digite o que deseja (ex: dragão futurista)">
+                        <button class="btn btn-secondary btn-sm">🎨 Gerar com IA</button>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>Personagem Exclusivo</label>
+                        <div class="character-grid">
+                            <div class="character-option">🦁</div>
+                            <div class="character-option">🐉</div>
+                            <div class="character-option">👑</div>
+                            <div class="character-option">⚡</div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-block">
+                        Adicionar ao Carrinho - R$ 89,90
+                    </button>
+                </div>
+                
+                <div class="personalizer-preview">
+                    <div class="preview-3d">
+                        <div class="tshirt-preview">
+                            <div class="tshirt-body"></div>
+                            <div class="tshirt-design">
+                                <span>👑</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="preview-label">Prévia 3D Interativa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Architecture -->
+    <section class="tech-section" id="tecnologia">
+        <div class="container">
+            <h2 class="section-title">Arquitetura <span class="highlight">Técnica</span></h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-number">01</div>
+                    <h3>Frontend</h3>
+                    <p>React Native para app iOS/Android, Next.js para site responsivo, interface unificada com design system.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">02</div>
+                    <h3>Backend</h3>
+                    <p>Node.js + Express, microsserviços independentes, autenticação JWT, processamento assíncrono.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">03</div>
+                    <h3>Infraestrutura</h3>
+                    <p>Backend robusto com microsserviços escaláveis, APIs RESTful, banco NoSQL e Redis para cache de alto desempenho.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-number">04</div>
+                    <h3>Inteligência Artificial</h3>
+                    <p>Modelos de IA para geração de estampas, criação de personagens, recomendações personalizadas e análise preditiva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Flow -->
+    <section class="user-flow">
+        <div class="container">
+            <h2 class="section-title">Fluxo Completo do <span class="highlight">Usuário</span></h2>
+            <div class="flow-timeline">
+                <div class="flow-step">
+                    <div class="flow-number">1</div>
+                    <div class="flow-content">
+                        <h3>Entrada</h3>
+                        <p>Login ou cadastro rápido com Google/Facebook. Onboarding visual apresenta funcionalidades principais.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">2</div>
+                    <div class="flow-content">
+                        <h3>Exploração</h3>
+                        <p>Navegação pelo catálogo com recomendações IA. Filtros avançados por estilo, cor, tamanho e coleção.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">3</div>
+                    <div class="flow-content">
+                        <h3>Personalização</h3>
+                        <p>Escolha de peça base, seleção de cor e tamanho. Upload de logo ou geração de estampa com IA.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">4</div>
+                    <div class="flow-content">
+                        <h3>Prévia 3D</h3>
+                        <p>Visualização realista da peça personalizada em modelo 3D interativo. Ajustes finais e confirmação do design.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">5</div>
+                    <div class="flow-content">
+                        <h3>Finalização</h3>
+                        <p>Adicionar ao carrinho, escolha de quantidade. Checkout com PIX, cartão ou boleto. Cálculo automático de frete.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-number">6</div>
+                    <div class="flow-content">
+                        <h3>Acompanhamento</h3>
+                        <p>Rastreamento em tempo real da produção. Notificações sobre status do pedido. Avaliação e feedback após entrega.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para Desenvolvimento <span class="highlight">Real</span></h2>
+                <p>Todo o ecossistema FD Store está arquiteturado para implementação imediata. Estrutura técnica definida, fluxos de dados mapeados, UI/UX projetada e integrações especificadas.</p>
+                <ul class="cta-list">
+                    <li>✓ Arquitetura técnica completa documentada</li>
+                    <li>✓ APIs e fluxos de dados estruturados</li>
+                    <li>✓ Interface visual (UI/UX) profissional</li>
+                    <li>✓ Layouts de telas para app e site</li>
+                    <li>✓ Organização dos cinco bancos inteligentes</li>
+                    <li>✓ Protótipo funcional ou código inicial</li>
+                </ul>
+                <button class="btn btn-primary btn-lg">🚀 Iniciar Projeto</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">👋</span>
+                        <div class="logo-text">
+                            <strong>FD STORE</strong>
+                            <small>Fort Dynamic</small>
+                        </div>
+                    </div>
+                    <p>Vista-se com Autoridade. O ecossistema FD Store representa o futuro da moda personalizada.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Produtos</h4>
+                        <a href="#">Camisetas</a>
+                        <a href="#">Moletons</a>
+                        <a href="#">Uniformes</a>
+                        <a href="#">Estampas</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Empresa</h4>
+                        <a href="#">Sobre Nós</a>
+                        <a href="#">Tecnologia</a>
+                        <a href="#">Blog FD</a>
+                        <a href="#">Contato</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Suporte</h4>
+                        <a href="#">Central de Ajuda</a>
+                        <a href="#">Política de Privacidade</a>
+                        <a href="#">Termos de Uso</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FD Store - Fort Dynamic. Todos os direitos reservados.</p>
+                <p class="made-with">Made with Manas ✨</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="sidebar" id="cartSidebar">
+        <div class="sidebar-header">
+            <h3>🛒 Meu Carrinho</h3>
+            <button class="close-btn" onclick="closeCart()">✕</button>
+        </div>
+        <div class="sidebar-content" id="cartItems">
+            <div class="empty-state">
+                <div class="empty-icon">🛍️</div>
+                <p>Seu carrinho está vazio</p>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <div class="total">
+                <span>Total:</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- Favorites Sidebar -->
+    <div class="sidebar" id="favoritesSidebar">
+        <div class="sidebar-header">
+            <h3>❤️ Meus Favoritos</h3>
+            <button class="close-btn" onclick="closeFavorites()">✕</button>
+        </div>
+        <div class="sidebar-content" id="favoritesItems">
+            <div class="empty-state">
+                <div class="empty-icon">💝</div>
+                <p>Nenhum favorito ainda</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <script src="script-old.js"></script>
+</body>
+</html>
