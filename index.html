@@ -7,144 +7,117 @@
     <link rel="stylesheet" href="/assets/css/style.css"> 
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <div class="header-left">
-                <button title="menuBtn" id="menuBtn" class="menu-btn">
-                    <svg id="menuIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                    <svg id="closeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
+    <header class="header" >
+        <div class="header-content">
+            <div class="logo">
                 </button>
-                <h1 class="logo">FD STORE</h1>
-                <p class="tagline">Fort Dynamic</p>
+                <h1 >FD STORE</h1>
+                <p >Fort Dynamic</p>
             </div>
 
-            <nav class="desktop-nav">
-                <a href="#">Início</a>
-                <a href="#">Produtos</a>
-                <a href="#">Personalizar</a>
-                <a href="#">Sobre</a>
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#personalizar">Personalizar</a>
+                <a href="#sobre">Sobre</a>
             </nav>
 
-            <div class="header-actions">
-                <button title="icon-btn" class="icon-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="m21 21-4.35-4.35"></path>
-                    </svg>
+            <div class="header-btn">
+                <button title="search-btn">
+                        <image class="img" src="/assets/img/icons/search-wt.svg" alt="search">
                 </button>
-                <button title="icon-btn" class="icon-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                    </svg>
+                <button title="favorite-btn" class="icon-btn">
+                    <image class="img" src="/assets/img/icons/favorite-heart-wt.svg" alt="favorite">
                 </button>
-                <button title="icon-btn" class="icon-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
+                
+                <button title="account-btn" >
+                    <image class="img" src="/assets/img/icons/account-wt.svg" alt="account">
                 </button>
-                <button id="cartBtn" class="icon-btn cart-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
-                    <span id="cartCount" class="cart-count">0</span>
+                
+                <button title="cart-btn">
+                    <image class="img" src="/assets/img/icons/shopping-cart-wt.svg" alt="cart">
                 </button>
             </div>
         </div>
 
-        <nav id="mobileNav" class="mobile-nav">
-            <a href="#">Início</a>
-            <a href="#">Produtos</a>
-            <a href="#">Personalizar</a>
-            <a href="#">Sobre</a>
+        <nav id="mobileNav">
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#personalizar">Personalizar</a>
+            <a href="#sobre">Sobre</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2 class="hero-title">Vista-se com Autoridade</h2>
-            <p class="hero-subtitle">Roupas personalizadas de alta qualidade</p>
-            <button class="hero-btn">Explorar Coleção</button>
+    <section >
+        <div >
+            <h2 >Vista-se com Autoridade</h2>
+            <p>Roupas personalizadas de alta qualidade</p>
+            <button href="#produtos">
+                Explorar Coleção              
+                </button>
         </div>
     </section>
 
-    <section class="filters-section">
-        <div class="filters-container">
-            <div class="filter-group">
-                <label for="searchInput">Buscar Produto</label>
-                <input type="text" id="searchInput" class="filter-input" placeholder="Digite o nome do produto...">
+    <section>
+        <div>
+            <div>
+               <h1>Buscar Produto</h1>
+                <input title="search" type="text">
             </div>
-            <div class="filter-group">
+            <div >
                 <label>Categorias</label>
-                <div class="category-pills">
-                    <button type="button" class="category-pill active" data-category="all">Todos</button>
-                    <button type="button" class="category-pill" data-category="Camisetas">Camisetas</button>
-                    <button type="button" class="category-pill" data-category="Moletons">Moletons</button>
-                    <button type="button" class="category-pill" data-category="Jaquetas">Jaquetas</button>
-                    <button type="button" class="category-pill" data-category="Calças">Calças</button>
+                <div>
+                    <button type="button" >Todos</button>
+                    <button type="button" >Camisetas</button>
+                    <button type="button" >Moletons</button>
+                    <button type="button" >Jaquetas</button>
+                    <button type="button" >Calças</button>
                 </div>
             </div>
-            <div class="filter-group">
-                <label for="priceRange">Faixa de Preço</label>
-                <select id="priceRange" class="filter-input">
-                    <option value="all">Todos os preços</option>
-                    <option value="0-100">Até R$ 100</option>
-                    <option value="100-200">R$ 100 - R$ 200</option>
-                    <option value="200-300">Acima de R$ 200</option>
-                </select>
-            </div>
+            <div>
+    <button title="price">Todos</button>
+    <button >Até R$ 50</button>
+    <button >R$ 50 - R$ 100</button>
+    <button >R$ 100 - R$ 200</button>
+    <button >Acima de R$ 200</button>
+</div>
         </div>
     </section>
 
 
-    <section class="products-section">
-        <h2 class="section-title">Nossos Produtos</h2>
-        <div id="productsGrid" class="products-grid"></div>
+    <section>
+        <h2 >Nossos Produtos</h2>
+        <div ></div>
     </section>
 
-    <div id="cartSidebar" class="cart-overlay">
-        <div class="cart-backdrop"></div>
-        <div class="cart-sidebar">
-            <div class="cart-header">
+    <div >
+        <div ></div>
+        <div >
+            <div>
                 <h2>Carrinho</h2>
-                <button title="closeCartBtn" id="closeCartBtn" class="close-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
+                <button title="closeCartBtn" >
+                    <svg></svg>
                 </button>
             </div>
 
-            <div id="cartItems" class="cart-items">
-                <p class="empty-cart">Seu carrinho está vazio</p>
+            <div >
+                <p>Seu carrinho está vazio</p>
             </div>
 
-            <div id="cartFooter" class="cart-footer" style="display: none;">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <span id="cartTotal" class="total-price">R$ 0,00</span>
+            <div>
+                <div>
                 </div>
-                <button class="checkout-btn">Finalizar Compra</button>
             </div>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-column">
+    <footer>
+        <div>
+            <div>
                 <h3>FD STORE</h3>
                 <p>Vista-se com autoridade. Roupas personalizadas de alta qualidade.</p>
             </div>
-            <div class="footer-column">
+            <div >
                 <h4>Links Rápidos</h4>
                 <ul>
                     <li><a href="#">Sobre Nós</a></li>
@@ -152,7 +125,7 @@
                     <li><a href="#">Termos de Uso</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
+            <div>
                 <h4>Contato</h4>
                 <ul>
                     <li>contato@fdstore.com</li>
@@ -160,7 +133,7 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div >
             <p>&copy; 2026 FD Store - Fort Dynamic. Todos os direitos reservados.</p>
             <p class="dk"> Made by <a href="https://portifolio-ten-lake-69.vercel.app" rel="noopener" target="_blank">Douglas Kohl</a></p>
         </div>
