@@ -154,12 +154,12 @@ body {
 
 .filters {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
     padding: 10px;
     margin: 10px;
+    font-family: "Cormorant Garamond", serif;
 }
 
 .filter-category {
@@ -170,4 +170,39 @@ body {
     gap: 10px;
     padding: 10px;
     margin: 10px;
+    button {
+        border: 0;
+        padding: 5px;
+        border-radius: 20px;
+        cursor: pointer;
+        width: 100px;
+        gap: 5px;
+        height: 35px;
+        font-size: 16px;
+        transition: all 0.3s ease
+        
+    }
 }
+
+.filter-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 14px;
+    width: 250px;
+}
+
