@@ -44,6 +44,29 @@ body {
   font-style: italic;
 }
 
+.menu a {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #B8962E, #E0C15A);
+  transition: width 1.3s ease;
+}
+.menu a:hover::after {
+  width: 100%;
+}
+.menu a:hover {
+  color: #D4AF37;
+}
+
 .header-btn {
   display: flex;
   align-items: center;
@@ -58,4 +81,68 @@ body {
   width: 20px; /* ou o tamanho que você quiser */
   height: 20px;
   display: block; /* Remove espaços extras */
+}
+
+.img:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.hero {
+  height: 50vh;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 200%;
+  background-color: #1A1A1A;
+}
+.hero button {
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #D4AF37;
+  background-color: #0B0B0B;
+  color: #E5E5E5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hero button:hover {
+  background-color: #D4AF37;
+  color: #0B0B0B;
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
+.hero-p {
+  color: #E5E5E5;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+
+.fort {
+  border: 2px solid #D4AF37;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+  color: #D4AF37;
+  font-size: 1.5rem;
+  font-family: "Cormorant Garamond", serif;
+  padding-bottom: 10px;
+}
+
+.h2-1 {
+  color: #FFFFFF;
+  font-size: 3rem;
+  padding-bottom: 15px;
+  padding: 15px;
+}
+
+.h2-2 {
+  color: #D4AF37;
+  font-size: 3rem;
+  padding-bottom: 15px;
+  padding: 15px;
+  font-family: "Cormorant Garamond", serif;
 }/*# sourceMappingURL=style.css.map */

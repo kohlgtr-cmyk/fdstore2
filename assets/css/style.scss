@@ -47,6 +47,31 @@ body {
     }
 }
 
+.menu {
+    a {
+        position: relative;
+        text-decoration: none;
+        padding-bottom: 5px;
+        transition: color 0.3s ease;
+    }
+    a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, $gold-dark, $gold-soft);
+        transition: width 1.3s ease;
+    }
+    a:hover::after {
+        width: 100%;
+    }
+    a:hover {
+        color: $gold-primary;
+    }
+}
+
 .header-btn {
     display: flex;
     align-items: center;
@@ -62,3 +87,67 @@ body {
     height: 20px;
     display: block; /* Remove espaços extras */
 }
+
+.img:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.hero {
+    height: 50vh;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 200%;
+    background-color:  $black-soft;
+    button {
+        font-size: 18px;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid $gold-primary;
+        background-color: $black-primary;
+        color: $white-soft;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    button:hover {
+        background-color: $gold-primary;
+        color: $black-primary;
+        transform: scale(1.2);
+        transition: all 0.5s ease;
+    }
+}
+.hero-p {
+    color: $white-soft;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+
+.fort {
+    border: 2px solid $gold-primary;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+    color: $gold-primary;
+    font-size: 1.5rem;
+    font-family: "Cormorant Garamond", serif;
+    padding-bottom: 10px;
+}
+
+.h2-1 {
+        color: $white-primary;
+        font-size: 3rem;
+        padding-bottom: 15px;
+        padding: 15px;
+    }
+
+.h2-2 {
+    color: $gold-primary;
+    font-size: 3rem;
+    padding-bottom: 15px;
+    padding: 15px;
+    font-family: "Cormorant Garamond", serif;
+}
+
