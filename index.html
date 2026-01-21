@@ -82,34 +82,40 @@
             </div>
         </div>
     </section>
+    <div class="produtos">
+    <section id="produtos" class="produtos-section">
+    <h2 class="produtos-title">Nossos Produtos</h2>
+    <div class="produtos-grid" id="produtosGrid">
+    </div>
+</section>
+</div>
+<!-- Modal do Carrinho (substitua o div vazio do carrinho) -->
+<div class="cart-overlay" id="cartOverlay">
+    <div class="cart-modal">
+        <div class="cart-header">
+            <h2>Carrinho</h2>
+            <button title="close-cart-btn" class="close-cart-btn" id="closeCartBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
 
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty">Seu carrinho está vazio</p>
+        </div>
 
-    <section>
-        <h2 >Nossos Produtos</h2>
-        <div ></div>
-    </section>
-
-    <div >
-        <div ></div>
-        <div >
-            <div>
-                <h2>Carrinho</h2>
-                <button title="closeCartBtn" >
-                    <svg></svg>
-                </button>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R$ 0,00</span>
             </div>
-
-            <div >
-                <p>Seu carrinho está vazio</p>
-            </div>
-
-            <div>
-                <div>
-                </div>
-            </div>
+            <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
         </div>
     </div>
-
+</div>
+    </section>
     <footer>
         <div>
             <div>
