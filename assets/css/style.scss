@@ -1021,3 +1021,32 @@ body {
     height: 150px;
   }
 }
+
+.footer {
+    text-align: center;
+    background-color: $black-primary;
+    font-family: "Cormorant Garamond", serif;
+    padding-bottom: 15px;
+    h3 {
+        color: $gold-primary;
+        font-size: 25px;
+        padding: 5px;
+    }
+    
+    p {
+        color: $white-soft;
+    }
+    
+    a {
+        text-decoration: none;
+        color: $white-soft;
+    }
+
+    a:hover {
+        color: $gold-primary;
+    }
+}
+
+.dk {
+    padding-bottom: 15px;
+}
