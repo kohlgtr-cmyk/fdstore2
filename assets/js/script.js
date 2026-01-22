@@ -188,8 +188,24 @@ function atualizarBotoesFavoritos() {
 // ============================================
 // Permite adicionar ao carrinho direto da lista de favoritos
 function adicionarAoCarrinhoDosFavoritos(produtoId) {
-    // Reutiliza a função que já existe
-    adicionarAoCarrinho(produtoId);
+ 
+   }   // Reutiliza a função que já existe
+    function adicionarAoCarrinho(produtoId) {
+    const produto = produtos.find(p => p.id === produtoId);
+    const itemExistente = carrinho.findIndex(item => item.id === produtoId);
+    
+    if (itemExistente !== -1) {
+        carrinho[itemExistente].quantidade++;
+    } else {
+        carrinho.push({
+            ...produto,
+            quantidade: 1
+        });
+    }
+    
+    atualizarCarrinho();
+    salvarCarrinho(); // ⭐ ADICIONE ESTA LINHA
+    mostrarNotificacao('Produto adicionado ao carrinho!');
 }
 
 // ============================================
@@ -264,6 +280,22 @@ function toggleFavorito(produtoId) {
 // CARRINHO DE COMPRAS
 // ============================================
 let carrinho = [];
+
+// ⭐ ADICIONE ESTAS DUAS FUNÇÕES AQUI ⭐
+
+function salvarCarrinho() {
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    console.log('💾 Carrinho salvo!', carrinho);
+}
+
+function carregarCarrinho() {
+    const carrinhoSalvo = localStorage.getItem('carrinho');
+    if (carrinhoSalvo) {
+        carrinho = JSON.parse(carrinhoSalvo);
+        atualizarCarrinho();
+        console.log('📂 Carrinho carregado!', carrinho);
+    }
+}
 
 // ============================================
 // ESTADO DOS FILTROS ATIVOS
@@ -440,6 +472,7 @@ function adicionarAoCarrinho(produtoId) {
     }
     
     atualizarCarrinho();
+    salvarCarrinho();
     mostrarNotificacao('Produto adicionado ao carrinho!');
 }
 
@@ -500,6 +533,7 @@ function aumentarQuantidade(produtoId) {
     if (item) {
         item.quantidade++;
         atualizarCarrinho();
+        salvarCarrinho();
     }
 }
 
@@ -508,12 +542,14 @@ function diminuirQuantidade(produtoId) {
     if (item && item.quantidade > 1) {
         item.quantidade--;
         atualizarCarrinho();
+        salvarCarrinho();
     }
 }
 
 function removerItem(produtoId) {
     carrinho = carrinho.filter(item => item.id !== produtoId);
     atualizarCarrinho();
+    salvarCarrinho();    
 }
 
 function abrirCarrinho() {
@@ -557,6 +593,7 @@ function mostrarNotificacao(mensagem) {
 // ============================================
 document.addEventListener('DOMContentLoaded', function() {
     carregarFavoritos();
+    carregarCarrinho();
     
     // Renderizar produtos inicialmente
     aplicarFiltros(); // IMPORTANTE: Usar aplicarFiltros() em vez de renderizarProdutos()
@@ -585,15 +622,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Botão de finalizar compra
     const checkoutBtn = document.getElementById('checkoutBtn');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', function() {
-            if (carrinho.length === 0) {
-                alert('Seu carrinho está vazio!');
-            } else {
-                alert('Funcionalidade de checkout em desenvolvimento!');
-            }
-        });
-    }
+if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', finalizarCompraWhatsApp);
+}
     
     // Campo de busca com debounce
     let timeoutBusca;
@@ -694,3 +725,77 @@ document.addEventListener('DOMContentLoaded', function() {
         clearFavBtn.addEventListener('click', limparFavoritos);
     }
 });
+
+
+// ============================================
+// CHECKOUT VIA WHATSAPP
+// ============================================
+
+// ⭐ COLOQUE AQUI O NÚMERO DO SEU WHATSAPP ⭐
+// Formato: Código do país + DDD + Número (sem espaços, traços ou parênteses)
+// Exemplo: 5511999999999 (55 = Brasil, 11 = DDD, 999999999 = número)
+const WHATSAPP_NUMERO = '5551994428072'; // ← ALTERE PARA SEU NÚMERO
+
+// Função para enviar pedido via WhatsApp
+function finalizarCompraWhatsApp() {
+    // 1. Verificar se o carrinho está vazio
+    if (carrinho.length === 0) {
+        alert('Seu carrinho está vazio! Adicione produtos antes de finalizar.');
+        return;
+    }
+    
+    // 2. Montar a mensagem
+    let mensagem = 'PEDIDO - FD STORE\n\n';
+    mensagem += 'Produtos:\n';
+    
+    
+    // 3. Adicionar cada produto do carrinho
+    let total = 0;
+    carrinho.forEach((item, index) => {
+        const subtotal = item.preco * item.quantidade;
+        total += subtotal;
+        
+        mensagem += `\n${index + 1}. *${item.nome}*\n`;
+        mensagem += `   Categoria: ${item.categoria}\n`;
+        mensagem += `   Quantidade: ${item.quantidade}x\n`;
+        mensagem += `   Preço unitário: R$ ${item.preco.toFixed(2)}\n`;
+        mensagem += `   Subtotal: R$ ${subtotal.toFixed(2)}\n`;
+    });
+    
+    // 4. Adicionar total
+    mensagem += '\n━━━━━━━━━━━━━\n';
+    mensagem += `TOTAL: R$ ${total.toFixed(2)}*\n\n`;
+    
+    // 5. Adicionar informações extras (opcional)
+    //mensagem += '📍 *Próximos passos:*\n';
+  //  mensagem += '1️⃣ Confirmar endereço de entrega\n';
+//    mensagem += '2️⃣ Escolher forma de pagamento\n';
+    //mensagem += '3️⃣ Finalizar pedido';    
+    //mensagem += '✨ Obrigado por escolher a FD Store!';
+    
+    // 6. Codificar a mensagem para URL
+    // encodeURIComponent() transforma a mensagem em formato de URL
+    // Substitui espaços, quebras de linha, caracteres especiais
+    const mensagemCodificada = encodeURIComponent(mensagem);
+    
+    // 7. Criar o link do WhatsApp
+    // https://wa.me/ é o link universal do WhatsApp
+    const linkWhatsApp = `https://wa.me/${WHATSAPP_NUMERO}?text=${mensagemCodificada}`;
+    
+    // 8. Abrir o WhatsApp em nova aba
+    window.open(linkWhatsApp, '_blank');
+    
+    // 9. Feedback visual
+    mostrarNotificacao('📱 Abrindo WhatsApp...');
+    
+    // 10. (OPCIONAL) Limpar carrinho após enviar
+    // Descomente as linhas abaixo se quiser limpar o carrinho automaticamente
+     setTimeout(() => {
+         if (confirm('Deseja limpar o carrinho?')) {
+             carrinho = [];
+             atualizarCarrinho();
+             salvarCarrinho();
+             fecharCarrinho();
+         }
+     }, 2000);
+}
