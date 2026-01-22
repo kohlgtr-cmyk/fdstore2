@@ -734,7 +734,7 @@ if (checkoutBtn) {
 // ⭐ COLOQUE AQUI O NÚMERO DO SEU WHATSAPP ⭐
 // Formato: Código do país + DDD + Número (sem espaços, traços ou parênteses)
 // Exemplo: 5511999999999 (55 = Brasil, 11 = DDD, 999999999 = número)
-const WHATSAPP_NUMERO = '5551999999999'; // ← ALTERE PARA SEU NÚMERO
+const WHATSAPP_NUMERO = '555496931278'; // ← ALTERE PARA SEU NÚMERO
 
 // Função para enviar pedido via WhatsApp
 function finalizarCompraWhatsApp() {
