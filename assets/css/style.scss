@@ -248,12 +248,15 @@ body {
     a {
         color: $gold-primary;
         display: flex;
+        flex-direction: row;
         align-items: center;
         font-style: italic;
         font-size: 20px;
 
     }
     p {
+        display: flex;
+        flex-direction: row;
         color: $white-soft;
         font-size: 10px;
         font-style: italic;
@@ -263,7 +266,9 @@ body {
 .menu {
     a {
         position: relative;
-        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        font-size: 10px;
         text-decoration: none;
         padding-bottom: 5px;
         transition: color 0.3s ease;

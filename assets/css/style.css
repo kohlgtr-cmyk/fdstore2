@@ -240,18 +240,23 @@ body {
   .logo a {
     color: #D4AF37;
     display: flex;
+    flex-direction: row;
     align-items: center;
     font-style: italic;
     font-size: 20px;
   }
   .logo p {
+    display: flex;
+    flex-direction: row;
     color: #E5E5E5;
     font-size: 10px;
     font-style: italic;
   }
   .menu a {
     position: relative;
-    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    font-size: 10px;
     text-decoration: none;
     padding-bottom: 5px;
     transition: color 0.3s ease;
