@@ -3,46 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FD Store | Fort Dynamic - Vista-se com Autoridade</title>
+    <title>SM Store | Sua Marca - Vista-se com Autoridade</title>
     <link rel="stylesheet" href="/assets/css/style.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Sora&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header" >
-        <div class="header-content">
-            <div class="logo">
-                </button>
-                    <a href="#inicio"><strong>SM</strong></a>
-                <p >Sua Marca</p>
-            </div>
+    <header class="header">
+    <div class="header-content">
 
-            <nav class="menu">
-                <a href="#produtos">Produtos</a>
-                <a href="#personalizar">Personalizar</a>
-                <a href="#sobre">Sobre</a>
-            </nav>
-
-            <div class="header-btn">
-                <button title="search-btn">
-                        <image class="img" src="/assets/img/icons/search-wt.svg" alt="search">
-                </button>
-                <button title="favorite-btn" class="icon-btn">
-                    <image class="img" src="/assets/img/icons/favorite-heart-wt.svg" alt="favorite">
-                </button>
-                
-                <button title="account-btn" >
-                    <image class="img" src="/assets/img/icons/account-wt.svg" alt="account">
-                </button>
-                
-                <button title="cart-btn">
-                    <image class="img" src="/assets/img/icons/shopping-cart-wt.svg" alt="cart">
-                </button>
-            </div>
+        <!-- LOGO -->
+        <div class="logo">
+            <a href="#inicio">
+                <strong>SM</strong>
+            </a>
+            <p>Sua Marca</p>
         </div>
-    </header>
 
+        <!-- MENU DESKTOP -->
+        <nav class="menu">
+            <a href="#produtos">Produtos</a>
+            <a href="#personalizar">Personalizar</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+
+        <!-- ÍCONES DO HEADER -->
+        <div class="header-btn">
+            <button title="search-btn">
+                <img class="img" src="/assets/img/icons/search-wt.svg" alt="search">
+            </button>
+            <button title="favorite-btn" class="icon-btn">
+                <img class="img" src="/assets/img/icons/favorite-heart-wt.svg" alt="favorite">
+            </button>
+            <button title="account-btn">
+                <img class="img" src="/assets/img/icons/account-wt.svg" alt="account">
+            </button>
+            <button title="cart-btn">
+                <img class="img" src="/assets/img/icons/shopping-cart-wt.svg" alt="cart">
+            </button>
+
+            <!-- BOTÃO HAMBURGUER (só aparece no mobile) -->
+            <button class="hamburger-btn" id="hamburgerBtn" title="menu-btn" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MENU MOBILE (drawer) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a href="#produtos" class="mobile-link" onclick="fecharMenuMobile()">Produtos</a>
+            <a href="#personalizar" class="mobile-link" onclick="fecharMenuMobile()">Personalizar</a>
+            <a href="#sobre" class="mobile-link" onclick="fecharMenuMobile()">Sobre</a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <p>contato@suamarca.com</p>
+            <p>(11) 9999-9999</p>
+        </div>
+    </div>
+</header>
     <section id="inicio">
         <div class="hero">
             <p class="fort">Moda & Personalizações</p>

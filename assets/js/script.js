@@ -800,4 +800,14 @@ function finalizarCompraWhatsApp() {
              fecharCarrinho();
          }
      }, 2000);
+
+     function fecharMenuMobile() {
+    document.getElementById('mobileMenu').classList.remove('active');
+    document.getElementById('hamburgerBtn').classList.remove('active');
+}
+
+document.getElementById('hamburgerBtn').addEventListener('click', function () {
+    this.classList.toggle('active');
+    document.getElementById('mobileMenu').classList.toggle('active');
+});
 }
