@@ -4,7 +4,7 @@
 const produtos = [
     {
         id: 1,
-        nome: "Camiseta FD Classic",
+        nome: "Camiseta SM Classic",
         categoria: "Camisetas",
         preco: 89.90,
         descricao: "Camiseta de algodão premium com logo bordado",
@@ -13,7 +13,7 @@ const produtos = [
     },
     {
         id: 2,
-        nome: "Moletom Fort Dynamic",
+        nome: "Moletom Sua Marca",
         categoria: "Moletons",
         preco: 189.90,
         descricao: "Moletom com capuz e bolso canguru",
@@ -31,7 +31,7 @@ const produtos = [
     },
     {
         id: 4,
-        nome: "Calça Cargo FD",
+        nome: "Calça Cargo SM",
         categoria: "Calças",
         preco: 159.90,
         descricao: "Calça cargo com bolsos laterais",
@@ -81,11 +81,11 @@ function toggleFavorito(produtoId) {
     if (indexFavorito !== -1) {
         // Se JÁ está nos favoritos, REMOVE
         favoritos.splice(indexFavorito, 1); // splice() remove do array
-        mostrarNotificacao('❤️ Removido dos favoritos');
+        mostrarNotificacao(' Removido dos favoritos');
     } else {
         // Se NÃO está nos favoritos, ADICIONA
         favoritos.push(produto);
-        mostrarNotificacao('❤️ Adicionado aos favoritos!');
+        mostrarNotificacao(' Adicionado aos favoritos!');
     }
     
     // 3. Atualizar a interface
@@ -118,9 +118,9 @@ function atualizarFavoritos() {
     favoritos.forEach(produto => {
         favoritesHTML += `
             <div class="favorite-item">
-                <div class="favorite-item-image">
-                    ${produto.nome}
-                </div>
+               <div class="favorite-item-image">
+    <img src="${produto.imagem}" alt="${produto.nome}" onerror="this.parentElement.style.background='linear-gradient(135deg,#1A1A1A,#3A3A3A)'; this.style.display='none';" style="width:100%; height:100%; object-fit:cover;">
+</div>
                 <div class="favorite-item-info">
                     <div>
                         <p class="favorite-item-categoria">${produto.categoria}</p>
@@ -330,9 +330,9 @@ function renderizarProdutos(produtosParaMostrar) {
                     </svg>
                 </button>
                 
-                <div class="produto-image" style="background: linear-gradient(135deg, #1A1A1A 0%, #3A3A3A 100%); display: flex; align-items: center; justify-content: center; color: #D4AF37; font-size: 1.2rem;">
-                    ${produto.nome}
-                </div>
+                <div class="produto-image">
+    <img src="${produto.imagem}" alt="${produto.nome}" onerror="this.parentElement.style.background='linear-gradient(135deg,#1A1A1A,#3A3A3A)'; this.style.display='none';">
+</div>
                 <div class="produto-info">
                     <p class="produto-categoria">${produto.categoria}</p>
                     <h3 class="produto-nome">${produto.nome}</h3>
@@ -498,8 +498,10 @@ function atualizarCarrinho() {
         
         cartHTML += `
             <div class="cart-item">
-                <div class="cart-item-image" style="background: linear-gradient(135deg, #1A1A1A 0%, #3A3A3A 100%);"></div>
-                <div class="cart-item-info">
+               <div class="cart-item-image">
+    <img src="${item.imagem}" alt="${item.nome}" onerror="this.parentElement.style.background='linear-gradient(135deg,#1A1A1A,#3A3A3A)'; this.style.display='none';" style="width:100%; height:100%; object-fit:cover;">
+</div>
+ <div class="cart-item-info">
                     <p class="cart-item-name">${item.nome}</p>
                     <p class="cart-item-price">R$ ${item.preco.toFixed(2)}</p>
                     <div class="cart-item-controls">
@@ -734,7 +736,7 @@ if (checkoutBtn) {
 // ⭐ COLOQUE AQUI O NÚMERO DO SEU WHATSAPP ⭐
 // Formato: Código do país + DDD + Número (sem espaços, traços ou parênteses)
 // Exemplo: 5511999999999 (55 = Brasil, 11 = DDD, 999999999 = número)
-const WHATSAPP_NUMERO = '555496931278'; // ← ALTERE PARA SEU NÚMERO
+const WHATSAPP_NUMERO = '99999999999'; // ← ALTERE PARA SEU NÚMERO
 
 // Função para enviar pedido via WhatsApp
 function finalizarCompraWhatsApp() {
